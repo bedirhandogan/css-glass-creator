@@ -5,25 +5,39 @@ export default function Arrangement({values, setValues}) {
     function handler(value, event) {
         switch (value) {
             case 'color':
-                setValues({...values, color: event.target.value});
+                setValues(prevState => {
+                    return {...prevState, color: event.target.value}
+                })
                 break;
             case 'width':
-                setValues({...values, width: values.width > 300 ? '300' : event.target.value});
+                setValues(prevState => {
+                    return {...prevState, width: prevState.width > 300 ? '300' : event.target.value}
+                });
                 break;
             case 'height':
-                setValues({...values, height: values.height > 300 ? '300' : event.target.value});
+                setValues(prevState => {
+                    return {...prevState, height: prevState.height > 300 ? '300' : event.target.value}
+                });
                 break;
             case 'radius':
-                setValues({...values, radius: event.target.value});
+                setValues(prevState => {
+                    return {...prevState, radius: event.target.value}
+                });
                 break;
             case 'transparency':
-                setValues({...values, transparency: event.target.value});
+                setValues(prevState => {
+                    return {...prevState, transparency: event.target.value}
+                });
                 break;
             case 'blur':
-                setValues({...values, blur: event.target.value});
+                setValues(prevState => {
+                    return {...prevState, blur: event.target.value}
+                });
                 break;
             case 'outline':
-                setValues({...values, outline: event.target.value});
+                setValues(prevState => {
+                    return {...prevState, outline: event.target.value}
+                });
                 break;
             default:
                 break;
