@@ -3,7 +3,6 @@
     height: 450px;
     background-color: var(--background-color-second);
     border-radius: var(--border-radius);
-    overflow: hidden;
     overflow-y: auto;
 }
 

@@ -7,7 +7,7 @@
     --background-color-third: #1f1f1f;
 
     /*Border Radius*/
-    --border-radius: 8px;
+    --border-radius: 5px;
 
     /*Font*/
     --font-size-primary: 16px;
@@ -33,4 +33,13 @@ body {
     color: var(--color-white);
     font-family: 'Poppins', sans-serif;;
     font-weight: lighter;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: var(--background-color-third);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #2a2a2a;
 }
