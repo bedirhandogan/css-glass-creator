@@ -5,9 +5,10 @@ import {useState} from "react";
 
 export default function Arrangement() {
     const [values, setValues] = useState({
-        radius: 1,
+        radius: 5,
         width: 100,
         height: 100,
+        transparency: 25,
     });
 
     function handler(value, event) {
@@ -20,6 +21,9 @@ export default function Arrangement() {
                 break;
             case 'radius':
                 setValues({...values, radius: event.target.value});
+                break;
+            case 'transparency':
+                setValues({...values, transparency: event.target.value})
                 break;
             default:
                 break;
@@ -45,6 +49,11 @@ export default function Arrangement() {
                         onChange={event =>  handler('height', event)}
                     />
                 </div>
+            </div>
+
+            <div className={'section'}>
+                <h3> Transparency: <span className={'value'}>{values.transparency <= 99 ? `0.${values.transparency}` : '1'}</span> </h3>
+                <input type={'range'} value={values.transparency} onChange={event =>  handler('transparency', event)}></input>
             </div>
 
             <div className={'section'}>
