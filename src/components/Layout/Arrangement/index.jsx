@@ -3,45 +3,30 @@ import {Grid} from "assets";
 
 export default function Arrangement({values, setValues}) {
     function handler(value, event) {
-        switch (value) {
-            case 'color':
-                setValues(prevState => {
-                    return {...prevState, color: event.target.value}
-                })
-                break;
-            case 'width':
-                setValues(prevState => {
-                    return {...prevState, width: prevState.width > 300 ? '300' : event.target.value}
-                });
-                break;
-            case 'height':
-                setValues(prevState => {
-                    return {...prevState, height: prevState.height > 300 ? '300' : event.target.value}
-                });
-                break;
-            case 'radius':
-                setValues(prevState => {
-                    return {...prevState, radius: event.target.value}
-                });
-                break;
-            case 'transparency':
-                setValues(prevState => {
-                    return {...prevState, transparency: event.target.value}
-                });
-                break;
-            case 'blur':
-                setValues(prevState => {
-                    return {...prevState, blur: event.target.value}
-                });
-                break;
-            case 'outline':
-                setValues(prevState => {
-                    return {...prevState, outline: event.target.value}
-                });
-                break;
-            default:
-                break;
+        const logArrangement = {
+            'color': setValues(prevState => {
+                return {...prevState, color: event.target.value}
+            }),
+            'width': setValues(prevState => {
+                return {...prevState, width: prevState.width > 300 ? '300' : event.target.value}
+            }),
+            'height': setValues(prevState => {
+                return {...prevState, height: prevState.height > 300 ? '300' : event.target.value}
+            }),
+            'radius': setValues(prevState => {
+                return {...prevState, radius: event.target.value}
+            }),
+            'transparency': setValues(prevState => {
+                return {...prevState, transparency: event.target.value}
+            }),
+            'blur': setValues(prevState => {
+                return {...prevState, blur: event.target.value}
+            }),
+            'outline': setValues(prevState => {
+                return {...prevState, outline: event.target.value}
+            }),
         }
+        return logArrangement[value]
     }
 
     return (
