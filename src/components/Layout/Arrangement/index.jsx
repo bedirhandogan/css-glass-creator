@@ -1,19 +1,7 @@
 import './styles.css';
 import {Grid} from "assets";
 
-import {useState} from "react";
-
-export default function Arrangement() {
-    const [values, setValues] = useState({
-        color: '#ffffff',
-        width: 100,
-        height: 100,
-        transparency: 25,
-        blur: 5,
-        outline: 25,
-        radius: 5,
-    });
-
+export default function Arrangement({values, setValues}) {
     function handler(value, event) {
         switch (value) {
             case 'color':
