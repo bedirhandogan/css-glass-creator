@@ -5,6 +5,7 @@ import {useState} from "react";
 
 export default function Arrangement() {
     const [values, setValues] = useState({
+        color: '#ffffff',
         width: 100,
         height: 100,
         transparency: 25,
@@ -15,6 +16,9 @@ export default function Arrangement() {
 
     function handler(value, event) {
         switch (value) {
+            case 'color':
+                setValues({...values, color: event.target.value});
+                break;
             case 'width':
                 setValues({...values, width: values.width > 300 ? '300' : event.target.value});
                 break;
@@ -57,6 +61,11 @@ export default function Arrangement() {
                         onChange={event =>  handler('height', event)}
                     />
                 </div>
+            </div>
+
+            <div className={'section'}>
+                <h3>Color: <span className={'value'}>{values.color}</span> </h3>
+                <input type={'color'} value={values.color} onChange={event => handler('color', event)} />
             </div>
 
             <div className={'section'}>
