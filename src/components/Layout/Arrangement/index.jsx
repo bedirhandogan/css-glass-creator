@@ -5,10 +5,11 @@ import {useState} from "react";
 
 export default function Arrangement() {
     const [values, setValues] = useState({
-        radius: 5,
         width: 100,
         height: 100,
         transparency: 25,
+        blur: 5,
+        radius: 5,
     });
 
     function handler(value, event) {
@@ -23,7 +24,10 @@ export default function Arrangement() {
                 setValues({...values, radius: event.target.value});
                 break;
             case 'transparency':
-                setValues({...values, transparency: event.target.value})
+                setValues({...values, transparency: event.target.value});
+                break;
+            case 'blur':
+                setValues({...values, blur: event.target.value});
                 break;
             default:
                 break;
@@ -54,6 +58,11 @@ export default function Arrangement() {
             <div className={'section'}>
                 <h3> Transparency: <span className={'value'}>{values.transparency <= 99 ? `0.${values.transparency}` : '1'}</span> </h3>
                 <input type={'range'} value={values.transparency} onChange={event =>  handler('transparency', event)}></input>
+            </div>
+
+            <div className={'section'}>
+                <h3> Blur: <span className={'value'}>{values.blur}</span> </h3>
+                <input type={'range'} max={20} step={0.1} value={values.blur} onChange={event =>  handler('blur', event)}></input>
             </div>
 
             <div className={'section'}>
