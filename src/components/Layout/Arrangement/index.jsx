@@ -9,6 +9,7 @@ export default function Arrangement() {
         height: 100,
         transparency: 25,
         blur: 5,
+        outline: 25,
         radius: 5,
     });
 
@@ -28,6 +29,9 @@ export default function Arrangement() {
                 break;
             case 'blur':
                 setValues({...values, blur: event.target.value});
+                break;
+            case 'outline':
+                setValues({...values, outline: event.target.value});
                 break;
             default:
                 break;
@@ -63,6 +67,11 @@ export default function Arrangement() {
             <div className={'section'}>
                 <h3> Blur: <span className={'value'}>{values.blur}</span> </h3>
                 <input type={'range'} max={20} step={0.1} value={values.blur} onChange={event =>  handler('blur', event)}></input>
+            </div>
+
+            <div className={'section'}>
+                <h3> Outline: <span className={'value'}>{values.outline <= 99 ? `0.${values.outline}` : '1'}</span> </h3>
+                <input type={'range'} value={values.outline} onChange={event =>  handler('outline', event)}></input>
             </div>
 
             <div className={'section'}>
