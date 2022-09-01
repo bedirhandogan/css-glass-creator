@@ -3,7 +3,7 @@ import {Grid} from "assets";
 
 import PropTypes from 'prop-types';
 
-const Arrangement = ({values, setValues}) => {
+function Arrangement({values, setValues}) {
     function handler(value, event) {
         return {
             'color': () => setValues(prevState => {

@@ -1,8 +1,10 @@
 import './styles.css';
+
 import { CopyBlock, dracula } from "react-code-blocks";
+
 import PropTypes from 'prop-types';
 
-const Code = ({code}) => {
+function Code({code}) {
     return (
         <div className={'code'}>
             <div className={'upper-area'}>
