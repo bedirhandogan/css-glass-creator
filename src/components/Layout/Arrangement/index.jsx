@@ -3,45 +3,29 @@ import {Grid} from "assets";
 
 export default function Arrangement({values, setValues}) {
     function handler(value, event) {
-        switch (value) {
-            case 'color':
-                setValues(prevState => {
-                    return {...prevState, color: event.target.value}
-                })
-                break;
-            case 'width':
-                setValues(prevState => {
-                    return {...prevState, width: prevState.width > 300 ? '300' : event.target.value}
-                });
-                break;
-            case 'height':
-                setValues(prevState => {
-                    return {...prevState, height: prevState.height > 300 ? '300' : event.target.value}
-                });
-                break;
-            case 'radius':
-                setValues(prevState => {
-                    return {...prevState, radius: event.target.value}
-                });
-                break;
-            case 'transparency':
-                setValues(prevState => {
-                    return {...prevState, transparency: event.target.value}
-                });
-                break;
-            case 'blur':
-                setValues(prevState => {
-                    return {...prevState, blur: event.target.value}
-                });
-                break;
-            case 'outline':
-                setValues(prevState => {
-                    return {...prevState, outline: event.target.value}
-                });
-                break;
-            default:
-                break;
-        }
+        return {
+            'color': () => setValues(prevState => {
+                return {...prevState, color: event.target.value}
+            }),
+            'width': () => setValues(prevState => {
+                return {...prevState, width: event.target.value}
+            }),
+            'height': () => setValues(prevState => {
+                return {...prevState, height: event.target.value}
+            }),
+            'radius': () => setValues(prevState => {
+                return {...prevState, radius: event.target.value}
+            }),
+            'transparency': () => setValues(prevState => {
+                return {...prevState, transparency: event.target.value}
+            }),
+            'blur': () => setValues(prevState => {
+                return {...prevState, blur: event.target.value}
+            }),
+            'outline': () => setValues(prevState => {
+                return {...prevState, outline: event.target.value}
+            }),
+        }[value]();
     }
 
     return (
@@ -51,12 +35,16 @@ export default function Arrangement({values, setValues}) {
             </div>
 
             <div className={'section'}>
-                <h3> Width x Height: <span className={'value'}>{`${values.width} x ${values.height}`}</span> </h3>
+                <h3> Width x Height:
+                    <span className={'value'}>
+                        {values.width.length > 3 ? `(${values.width.slice(0, 3)}...)` : values.width} x {values.height.length > 3 ? `(${values.height.slice(0, 3)}...)` : values.height}
+                    </span>
+                </h3>
                 <div>
                     <input
                         type={'number'}
                         value={values.width}
-                        onChange={event => handler('width', event) }
+                        onChange={event => handler('width', event)}
                     /> x <input
                         type={'number'}
                         value={values.height}
