@@ -7,8 +7,8 @@ function App() {
         color: '#FFFFFF',
         width: 100,
         height: 100,
-        transparency: 5,
-        blur: 0.9,
+        transparency: 10,
+        blur: 3.3,
         outline: 9,
         radius: 5,
     });
