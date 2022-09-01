@@ -1,4 +1,4 @@
-import Arrangement from "components/Layout/Arrangement";
+import Arrangement from "components/Arrangement";
 import {useState} from "react";
 
 function App() {

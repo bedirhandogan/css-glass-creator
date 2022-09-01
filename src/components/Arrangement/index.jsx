@@ -1,4 +1,4 @@
-import './styles.css';
+import 'components/Arrangement/styles.css';
 import {Grid} from "assets";
 
 export default function Arrangement({values, setValues}) {
