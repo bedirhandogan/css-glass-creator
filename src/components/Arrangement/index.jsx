@@ -59,7 +59,7 @@ export default function Arrangement({values, setValues}) {
             </div>
 
             <div className={'section'}>
-                <h3> Transparency: <span className={'value'}>{values.transparency <= 99 ? `0.${values.transparency}` : '1'}</span> </h3>
+                <h3> Transparency: <span className={'value'}>{values.transparency <= 99 ? `${values.transparency <= 9 ? `0.0${values.transparency}` : `0.${values.transparency}` }` : '1'}</span> </h3>
                 <input type={'range'} value={values.transparency} onChange={event =>  handler('transparency', event)}></input>
             </div>
 
@@ -69,7 +69,7 @@ export default function Arrangement({values, setValues}) {
             </div>
 
             <div className={'section'}>
-                <h3> Outline: <span className={'value'}>{values.outline <= 99 ? `0.${values.outline}` : '1'}</span> </h3>
+                <h3> Outline: <span className={'value'}>{values.outline <= 99 ? `${values.outline <= 9 ? `0.0${values.outline}` : `0.${values.outline}` }` : '1'}</span> </h3>
                 <input type={'range'} value={values.outline} onChange={event =>  handler('outline', event)}></input>
             </div>
 

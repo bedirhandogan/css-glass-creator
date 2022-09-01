@@ -1,20 +1,25 @@
 import Arrangement from "components/Arrangement";
 import {useState} from "react";
+import Preview from "components/Preview";
 
 function App() {
     const [values, setValues] = useState({
         color: '#FFFFFF',
         width: 100,
         height: 100,
-        transparency: 25,
-        blur: 5,
-        outline: 25,
+        transparency: 5,
+        blur: 0.9,
+        outline: 9,
         radius: 5,
     });
   return (
-      <>
+      <div style={{
+          display: 'flex',
+          gap: '10px',
+      }}>
           <Arrangement values={values} setValues={setValues} />
-      </>
+          <Preview values={values} />
+      </div>
   );
 }
 
