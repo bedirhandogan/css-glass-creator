@@ -1,6 +1,7 @@
 import './styles.css';
+import PropTypes from "prop-types";
 
-export default function Preview({values}) {
+function Preview({values}) {
     const r = parseInt(values.color.substr(1,2), 16);
     const g = parseInt(values.color.substr(3,2), 16);
     const b = parseInt(values.color.substr(5,2), 16);
@@ -20,3 +21,9 @@ export default function Preview({values}) {
         </div>
     );
 }
+
+Preview.propTypes = {
+    values: PropTypes.object,
+}
+
+export default Preview;

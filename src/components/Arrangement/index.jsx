@@ -1,7 +1,9 @@
 import 'components/Arrangement/styles.css';
 import {Grid} from "assets";
 
-export default function Arrangement({values, setValues}) {
+import PropTypes from 'prop-types';
+
+const Arrangement = ({values, setValues}) => {
     function handler(value, event) {
         return {
             'color': () => setValues(prevState => {
@@ -80,3 +82,10 @@ export default function Arrangement({values, setValues}) {
         </div>
     )
 }
+
+Arrangement.propTypes = {
+    values: PropTypes.object,
+    setValues: PropTypes.func
+}
+
+export default Arrangement;

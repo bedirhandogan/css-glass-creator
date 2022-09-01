@@ -1,8 +1,8 @@
 import './styles.css';
-
 import { CopyBlock, dracula } from "react-code-blocks";
+import PropTypes from 'prop-types';
 
-export default function Code({code}) {
+const Code = ({code}) => {
     return (
         <div className={'code'}>
             <div className={'upper-area'}>
@@ -20,3 +20,9 @@ export default function Code({code}) {
         </div>
     )
 }
+
+Code.propTypes = {
+    code: PropTypes.string
+}
+
+export default Code;
