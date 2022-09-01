@@ -23,6 +23,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 body {
@@ -37,4 +38,21 @@ body {
 
 ::-webkit-scrollbar {
     width: 0;
+}
+
+
+.App {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+@media (max-width: 921px) {
+    .App {
+        justify-content: center;
+    }
+    html, body {
+        align-items: flex-start;
+    }
 }
