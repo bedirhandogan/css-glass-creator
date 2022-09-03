@@ -20,7 +20,10 @@ function ItemList({query, setQuery}) {
 
     return (<div className={'saved-list'} style={!query ? {display: 'none'} : {display: 'flex'}}>
         <div className={'list'}>
-            <h3>Item List <img src={Close} alt={'close icon'} onClick={() => setQuery(false)}/></h3>
+            <h3>Item List <img src={Close} alt={'close icon'} onClick={() => {
+                setQuery(false);
+                window.location.reload();
+            }  }/></h3>
             <div className={'list-area'}>
                 {!localStorage.getItem('list') ? localStorage.setItem("list", []) : storage.map((element, index) => <div
                     className={'item'} key={index}>
