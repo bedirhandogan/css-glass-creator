@@ -1,0 +1,117 @@
+.saved-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saved-list .list {
+    position: relative;
+    width: 300px;
+    height: 450px;
+    background-color: var(--background-color-primary);
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.saved-list .list h3 {
+    margin: 0;
+    font-size: var(--font-size-primary);
+    background-color: var(--background-color-second);
+    padding: 10px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.saved-list .list h3 img {
+    width: 10px;
+    height: 10px;
+    transition: 150ms all;
+}
+
+.saved-list .list h3 img:hover {
+    opacity: 0.5;
+}
+
+.saved-list .list .list-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+
+.saved-list .list .list-area .item {
+    padding: 15px;
+    border-bottom: 2px solid var(--background-color-second);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.saved-list .list .list-area .item h3 {
+    padding: 0 10px;
+    border-radius: 2px;
+}
+.saved-list .list .list-area .item h3 div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.saved-list .list .list-area .item h3 img {
+    width: 16px;
+    height: 16px;
+}
+
+.saved-list .list .list-area .item .element {
+    padding: 0 10px;
+    font-size: var(--font-size-second);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    column-gap: 10px;
+}
+
+.saved-list .list .list-area .item .value {
+    color: #1382be;
+}
+
+.saved-list .list .apply {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    background-color: var(--background-color-third);
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.saved-list .list .apply button {
+    all: unset;
+    padding: 4px 8px;
+    background-color: #1382be;
+    margin: 0 5px;
+    border-radius: 2px;
+    transition: 200ms all;
+}
+
+.saved-list .list .apply button:hover {
+    background-color: #0e5c86;
+}
