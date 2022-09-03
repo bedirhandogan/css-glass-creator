@@ -1,7 +1,7 @@
 import './styles.css';
-import { CopyBlock, dracula } from "react-code-blocks";
+import {CopyBlock, dracula} from "react-code-blocks";
 import PropTypes from 'prop-types';
-import { SaveCopy } from 'assets';
+import {SaveCopy} from 'assets';
 import ItemList from "components/Code/components/ItemList";
 import {useEffect, useState} from "react";
 
@@ -33,32 +33,29 @@ function Code({code, values}) {
         setQuery(true);
     }
 
-    return (
-        <div className={'code'}>
-            <div className={'upper-area'}>
-                Code
-            </div>
-            <div className={'code-container'}>
-                <h3>CSS:</h3>
-                <button className={'save-copy'} onClick={handleClick}>
-                    <img src={SaveCopy} alt={'save icon'} />
-                </button>
-                <CopyBlock
-                    text={code}
-                    language='css'
-                    theme={dracula}
-                    codeBlock
-                />
-            </div>
-
-            <ItemList query={query} setQuery={setQuery} />
+    return (<div className={'code'}>
+        <div className={'upper-area'}>
+            Code
         </div>
-    )
+        <div className={'code-container'}>
+            <h3>CSS:</h3>
+            <button className={'save-copy'} onClick={handleClick}>
+                <img src={SaveCopy} alt={'save icon'}/>
+            </button>
+            <CopyBlock
+                text={code}
+                language='css'
+                theme={dracula}
+                codeBlock
+            />
+        </div>
+
+        <ItemList query={query} setQuery={setQuery}/>
+    </div>)
 }
 
 Code.propTypes = {
-    code: PropTypes.string,
-    values: PropTypes.object
+    code: PropTypes.string, values: PropTypes.object
 }
 
 export default Code;
