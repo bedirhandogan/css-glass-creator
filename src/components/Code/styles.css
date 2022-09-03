@@ -36,31 +36,6 @@
     align-items: center;
 }
 
-.code .code-container .save-copy {
-    align-items: center;
-    background: var(--background-color-second);
-    margin-top: 0.15rem;
-    border-radius: 0.25rem;
-    max-height: 28px;
-    max-width: 28px;
-    padding: 0.25rem;
-
-    position: absolute;
-    z-index: 1;
-    top: 57px;
-    right: 60px;
-}
-
-.code .code-container .save-copy img {
-    width: 16px;
-    height: 16px;
-    user-select: none;
-}
-
-.code .code-container .save-copy:hover {
-    opacity: 0.5;
-}
-
 .code .code-container * {
     background-color: var(--background-color-second);
 }

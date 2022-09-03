@@ -24,7 +24,7 @@ function App() {
     -webkit-backdrop-filter: blur(${values.blur}px);
     border: 2px solid rgba(255, 255, 255, ${values.outline <= 99 ? `${values.outline <= 9 ? `0.0${values.outline}` : `0.${values.outline}`}` : '1'});
     border-radius: ${values.radius}px;
-}`} values={values}/>
+}`}/>
     </div>);
 }
 
