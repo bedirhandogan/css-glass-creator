@@ -22,7 +22,7 @@ function App() {
     background-color: rgb(${r}, ${g}, ${b}, ${values.transparency <= 99 ? `${values.transparency <= 9 ? `0.0${values.transparency}` : `0.${values.transparency}`}` : '1'});
     backdrop-filter: blur(${values.blur}px);
     -webkit-backdrop-filter: blur(${values.blur}px);
-    border: 2px solid rgba(255, 255, 255, ${values.outline <= 99 ? `${values.outline <= 9 ? `0.0${values.outline}` : `0.${values.outline}`}` : '1'});
+    border: 2px solid rgb(255, 255, 255, ${values.outline <= 99 ? `${values.outline <= 9 ? `0.0${values.outline}` : `0.${values.outline}`}` : '1'});
     border-radius: ${values.radius}px;
 }`}/>
     </div>);
