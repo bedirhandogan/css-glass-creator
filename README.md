@@ -6,13 +6,11 @@ A web application that offers ready-made code pieces that you can give glass eff
 
 ![preview](https://user-images.githubusercontent.com/59766658/188273371-27fa6ef6-4c97-4221-9900-4d217a06a5bc.png)
 
-## Install
-```
-npm install
-```
-## Start
-```
-npm start
-```
+### App Setup
+```bash
+# install dependencies 
+$ npm install
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# build app and get it ready to use. view: http://localhost:3000
+$ npm run build 
+```
